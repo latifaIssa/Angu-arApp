@@ -1,24 +1,24 @@
 <div class="container">
     <div>
-        <h2>{{"weather in "+weather?.name+" /"+weather?.sys?.country}}</h2>
+        <h2>{{"weather in "+weather?.name+" /"+weather?.sys?.country}}</h2><br>
         <!-- <h3>{{"date: "+ weather.list[0].dt_txt}}</h3> -->
     </div>
 
     <div class="weather-list">
-        <table>
+        <table >
 
             <tr>
                 <td>day</td>
-                <td *ngFor="let wth of fourDayWeatherInfo">{{wth.date | date:'EEEE, MMM dd'}}</td>
-            </tr>
-            <tr>
                 <td>temp_min</td>
-                <td *ngFor="let wth of fourDayWeatherInfo">{{wth.temp_min+" °C"}}</td>
-            </tr>
-            <tr>
                 <td>temp_max</td>
-                <td *ngFor="let wth of fourDayWeatherInfo">{{wth.temp_max+" °C"}}</td>
             </tr>
+            <tr *ngFor="let wth of fourDayWeatherInfo">
+                <td >{{wth.date | date:'EEEE, MMM dd'}}</td>
+                <td  >{{wth.temp_min+" °C"}}</td>
+                <td >{{wth.temp_max+" °C"}}</td>
+                <td ><button (click)="showDetailes(wth)">WeatherDetailes</button></td>
+            </tr>
+            
         </table>
     </div>
 </div>

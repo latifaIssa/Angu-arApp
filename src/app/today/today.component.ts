@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { WthService } from '../services/wth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-today',
@@ -13,40 +14,33 @@ export class TodayComponent implements OnInit {
   forecast;
   weatherInfo;
   public fourDayWeatherInfo = [];
-  constructor(private weatherService: WthService) { }
+  constructor(private route: Router,private weatherService: WthService) { }
 
   ngOnInit() {
-    // this.weatherService.getWeatherData(35,139).subscribe(data=>{
-      
-    // })
-    this.getCurrentLocation("weather");
-    // this.getLocation("forecast");
+    this.getCurrentLocation(); 
   }
-  getCurrentLocation(typeOfData: string){
+  getCurrentLocation( ){
       this.weatherService.getPosition().then(pos=>{
-        this.weatherService.getWeatherData(pos.lat, pos.lng, typeOfData).subscribe(data=>{
-          this.weather = data;
+        this.weatherService.getWeatherData(pos.lat, pos.lng, "weather").subscribe(currentData=>{
+          this.weather = currentData;
           console.log(`Positon: ${pos.lng} ${pos.lat}`);
           console.log(this.weather);
-          // this.setWeatherInfo(this.weather);
-          this.getLocation("forecast");
         });
+      })
+        this.weatherService.getPosition().then(pos=>{
+          this.weatherService.getWeatherData(pos.lat, pos.lng, "forecast").subscribe(data=>{
+            this.forecast = data;
+            // console.log(`Positon: ${pos.lng} ${pos.lat}`);
+            console.log(this.forecast);
+            this.setWeatherInfo(this.forecast);
+          });
    
       })
-  }
-  getLocation(typeOfData: string){
-    this.weatherService.getPosition().then(pos=>{
-      this.weatherService.getWeatherData(pos.lat, pos.lng, typeOfData).subscribe(data=>{
-        this.forecast = data;
-        // console.log(`Positon: ${pos.lng} ${pos.lat}`);
-        console.log(this.forecast);
-        this.setWeatherInfo(this.forecast);
-      });
- 
-    })
+  
 }
+ 
    setWeatherInfo(forecast: any){
-    for(let i=0; i<this.forecast.list.length ; i=i+8){
+    for(let i=0; i<this.forecast.list.length - 8; i=i+8){
       this.weatherInfo = { 
         date: this.forecast.list[i].dt_txt,
         icon :this.forecast.list[i].weather[0].icon,
@@ -62,6 +56,9 @@ export class TodayComponent implements OnInit {
       this.fourDayWeatherInfo.push(this.weatherInfo);
       }
       console.log(this.fourDayWeatherInfo);
+  }
+  showDetailes(wth: object){
+    // this.route.navigate('/detailes');
   }
 
 }
