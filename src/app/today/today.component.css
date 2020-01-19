@@ -1,0 +1,7 @@
+.container{
+    display: flex;
+    justify-content: center;
+    background-image: url("../../assets/bg2.jpg");
+    width: 500px;
+    height: 700px;
+}
