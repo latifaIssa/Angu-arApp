@@ -36,11 +36,13 @@ export class WthService {
   }
   setWeatherInfo(forecast: any){
     
-    for(let i=0; i<forecast.list.length - 8; i=i+8){
+    for(let i=0; i<forecast.list.length ; i=i+8){
       this.weatherInfo = { 
-        id:i/8,
+        id: i/8,
         date: forecast.list[i].dt_txt,
-        icon :forecast.list[i].weather[0].icon,
+        mainstate:forecast.list[i].weather[0].main,
+        // icon:forecast.list[i].main.weather[0].icon,
+        temp:forecast.list[i].main.temp,
         temp_min: forecast.list[i].main.temp_min,
         temp_max: forecast.list[i].main.temp_max,
         feels_like: forecast.list[i].main.feels_like,

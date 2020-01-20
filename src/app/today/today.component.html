@@ -1,7 +1,7 @@
 <div class="container">
     <div>
         <h2>{{"weather in "+weather?.name+" /"+weather?.sys?.country}}</h2><br>
-        <!-- <h3>{{"date: "+ weather.list[0].dt_txt}}</h3> -->
+        <!-- <h3>{{fourDayWeatherInfo[0]?.temp}}</h3> -->
     </div>
 
     <div class="weather-list">
@@ -9,17 +9,18 @@
 
             <tr>
                 <td>day</td>
-                <td>temp_min</td>
-                <td>temp_max</td>
+                <td>temp</td>
+                <!-- <td>temp_max</td> -->
             </tr>
             <tr *ngFor="let wth of fourDayWeatherInfo">
                 <td>{{wth.date | date:'EEEE, MMM dd'}}</td>
-                <td>{{wth.temp_min+" °C"}}</td>
-                <td>{{wth.temp_max+" °C"}}</td>
+                <td>{{wth.temp+" °C"}}</td>
+                <!-- <td>{{wth.temp_max+" °C"}}</td> -->
 
                 <td><a [routerLink]="['/detailes-weather', wth.id]">weather detailes</a></td>
             </tr>
 
         </table>
+        <button (click)="searchAboutCity()">Find  your city</button>
     </div>
 </div>

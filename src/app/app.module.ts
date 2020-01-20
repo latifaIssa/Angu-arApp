@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { TodayComponent } from './today/today.component';
 import { DetailesWeatherComponent } from './detailes-weather/detailes-weather.component';
 import { SearchOnCityComponent } from './search-on-city/search-on-city.component';
-import { FilterpipePipe } from './pipes/filterpipe.pipe';
+// import { FilterpipePipe } from './pipes/filterpipe.pipe';
  
 
 
@@ -20,7 +20,7 @@ import { FilterpipePipe } from './pipes/filterpipe.pipe';
     TodayComponent,
     DetailesWeatherComponent,
     SearchOnCityComponent,
-    FilterpipePipe,
+    // FilterpipePipe,
 
  
   ],
