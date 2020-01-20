@@ -42,6 +42,7 @@ export class TodayComponent implements OnInit {
    setWeatherInfo(forecast: any){
     for(let i=0; i<this.forecast.list.length - 8; i=i+8){
       this.weatherInfo = { 
+        id:i/8,
         date: this.forecast.list[i].dt_txt,
         icon :this.forecast.list[i].weather[0].icon,
         temp_min: this.forecast.list[i].main.temp_min,
@@ -57,8 +58,6 @@ export class TodayComponent implements OnInit {
       }
       console.log(this.fourDayWeatherInfo);
   }
-  showDetailes(wth: object){
-    // this.route.navigate('/detailes');
-  }
+  
 
 }

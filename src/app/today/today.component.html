@@ -5,7 +5,7 @@
     </div>
 
     <div class="weather-list">
-        <table >
+        <table>
 
             <tr>
                 <td>day</td>
@@ -13,12 +13,13 @@
                 <td>temp_max</td>
             </tr>
             <tr *ngFor="let wth of fourDayWeatherInfo">
-                <td >{{wth.date | date:'EEEE, MMM dd'}}</td>
-                <td  >{{wth.temp_min+" °C"}}</td>
-                <td >{{wth.temp_max+" °C"}}</td>
-                <td ><button (click)="showDetailes(wth)">WeatherDetailes</button></td>
+                <td>{{wth.date | date:'EEEE, MMM dd'}}</td>
+                <td>{{wth.temp_min+" °C"}}</td>
+                <td>{{wth.temp_max+" °C"}}</td>
+
+                <td><a [routerLink]="['/detailes-weather', wth.id]">weather detailes</a></td>
             </tr>
-            
+
         </table>
     </div>
 </div>

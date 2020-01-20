@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
   {path:'', component: TodayComponent},
-  {path:'detailes',component:DetailesWeatherComponent}
+  {path:'detailes-weather/:id',component:DetailesWeatherComponent}
 ];
 
 @NgModule({

@@ -1,1 +1,53 @@
-<p>detailes-weather works!</p>
+<div class="container">
+    <div>
+        <!-- <h2>{{"weather in "+weather?.name+" /"+weather?.sys?.country}}</h2><br> -->
+        <!-- <h3>{{ }}</h3> -->
+    </div>
+
+    <div class="weather-list">
+        <h3>{{fourDayWeatherInfo[wth]?.date}}</h3>
+        <table>
+
+            <tr>
+                <td>temp_min</td>
+                <td>{{fourDayWeatherInfo[wth]?.temp_min+"°C"}}</td>
+            </tr>
+            <tr>
+                <td>temp_max</td>
+                <td>{{fourDayWeatherInfo[wth]?.temp_max+"°C"}}</td>
+            </tr>
+            <tr>
+                <td>temp</td>
+                <td>{{fourDayWeatherInfo[wth]?.feels_like+"°C"}}</td>
+            </tr>
+            <tr>
+                <td>pressure</td>
+                <td>{{fourDayWeatherInfo[wth]?.pressure}}</td>
+            </tr>
+            <tr>
+                <td>sea_level</td>
+                <td>{{fourDayWeatherInfo[wth]?.sea_level}}</td>
+            </tr>
+            <tr>
+                <td>grnd_level</td>
+                <td>{{fourDayWeatherInfo[wth]?.grnd_level}}</td>
+            </tr>
+            <tr>
+                <td>humidity</td>
+                <td>{{fourDayWeatherInfo[wth]?.humidity}}</td>
+            </tr>
+            <tr>
+                <td>temp_kf</td>
+                <td>{{fourDayWeatherInfo[wth]?.temp_kf}}</td>
+            </tr>
+
+
+            <tr>
+                <td>
+                    <button (click)="back()">back</button>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</div>
