@@ -1,7 +1,7 @@
 .container {
     padding-top: 50px;
     padding-bottom: 10px;
-    color: #405065;
+    color: black;
 }
 
 .search-hero {
@@ -17,3 +17,11 @@
 .form-control::placeholder {
     font-family: FontAwesome;
 }
+table{
+    border-collapse: collapse;
+}
+td, th {
+    border: 1px solid yellow;
+    text-align: left;
+    padding: 8px;
+  }

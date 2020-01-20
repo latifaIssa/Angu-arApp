@@ -2,19 +2,7 @@
     box-sizing: border-box;
 }
 
-.container {
-    display: flex;
-    justify-content: center;
-    /* background-image: url("../../assets/bg2.jpg"); */
-    background: linear-gradient(45deg, transparent 50%, transparent 90%, blue 1000%), linear-gradient(-45deg, blue 8%, rgb(243, 223, 45) 100%, blue 10%, transparent 50%), linear-gradient(45deg, rgb(250, 247, 93) 50%, rgb(243, 223, 45) 10%, transparent 59%);
-    width: 610px;
-    height: 1000px;
-    flex-direction: column;
-    background-repeat: no-repeat;
-    background-origin: content-box;
-    overflow: hidden;
-    overflow-y: hidden;
-}
+
 
 h2 {
     text-align: center;

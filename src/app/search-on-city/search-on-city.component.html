@@ -14,12 +14,13 @@
                     <th>Country</th>
                 </tr>
             </thead>
+            <!-- *ngFor="let city of four | filterpipe:searchText" -->
             <tbody>
-                <!-- <tr *ngFor="let city of cities | filterpipe:searchText">
-                    <td>{{city.id}}</td>
-                    <td>{{city.name}}</td>
-                    <td>{{city.country}}</td>
-                </tr> -->
+                <tr *ngFor="let wth of cityInfo[0] | filterpipe:searchText ">
+                    <td>{{wth.id}}</td>
+                    <td>{{wth.name }}</td>
+                    <td>{{wth.sys.country}}</td>
+                </tr>
             </tbody>
         </table>
     </div>
