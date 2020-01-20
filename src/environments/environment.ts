@@ -4,8 +4,11 @@
 
 export const environment = {
   production: false,
-  weatherApi: "https://openweathermap.org/data/2.5/",
-  ApiKey: "b6907d289e10d714a6e88b30761fae22"
+  weatherApi: "https://api.openweathermap.org/data/2.5/",
+  ApiKey: "484e0fa7b9e69f7b79c09915215e85b1"
+  
+ 
+  
 };
 
 /*
