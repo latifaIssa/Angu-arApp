@@ -11,6 +11,7 @@ import { DetailesWeatherComponent } from './detailes-weather/detailes-weather.co
 import { SearchOnCityComponent } from './search-on-city/search-on-city.component';
 
 import { FilterpipePipe } from './pipes/filterpipe.pipe';
+import { LoginComponent } from './login/login.component';
 // import { TempConverterPipe } from './pipes/temp-converter.pipe';
 
 
@@ -22,6 +23,7 @@ import { FilterpipePipe } from './pipes/filterpipe.pipe';
     DetailesWeatherComponent,
     SearchOnCityComponent,
     FilterpipePipe,
+    LoginComponent,
     // TempConverterPipe,
   ],
   imports: [
