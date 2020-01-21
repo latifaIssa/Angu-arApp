@@ -9,5 +9,5 @@
     height: 660px;
     flex-direction: column;
     background-repeat: no-repeat;
-    overflow: hidden;
+    /* overflow: hidden; */
 }

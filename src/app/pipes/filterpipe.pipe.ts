@@ -11,7 +11,7 @@ export class FilterpipePipe implements PipeTransform {
     if (searchText == undefined)
     return city;
 
-    return city.filterpipe(function(cityName){
+    return city.filter(function(cityName){
         return cityName.name.toLowerCase().includes(searchText.toLowerCase());
     });
      
