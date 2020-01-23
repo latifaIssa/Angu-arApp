@@ -1,5 +1,19 @@
-<form (submit)="loginUser($event)">
-    <input type="text" placeholder="user name">
-    <input type="password" placeholder="password">
-    <input type="submit" placeholder="Login">
+<form class="form-container" [formGroup]="userLogin" (ngSubmit)="callingFunction()" novalidate>
+    <div>
+        <label for="email">Email</label><br>
+        <input type="text" placeholder="Email" formControlName="email"></div>
+    <div>
+        <label for="password">Password</label><br>
+        <input type="password" placeholder="password" formControlName="password">
+    </div>
+    <div *ngIf="userLogin.controls['email'].invalid && (userLogin.controls['email'].dirty || userLogin.controls['password'].touched)">
+
+    </div>
+    <div *ngIf="angForm.controls['name'].errors.required">
+        email is required.
+    </div>
+    <div>
+        <input type="submit" placeholder="Login" value="Login" class="login">
+    </div>
+
 </form>

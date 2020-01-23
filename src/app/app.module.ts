@@ -2,7 +2,7 @@ import { AppRoutingModule } from "./routing/AppRoutingModule";
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, FormBuilder, FormControlName} from '@angular/forms';
  
 
 import { AppComponent } from './app.component';
@@ -24,13 +24,14 @@ import { LoginComponent } from './login/login.component';
     SearchOnCityComponent,
     FilterpipePipe,
     LoginComponent,
+    
     // TempConverterPipe,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule   
   ],
   providers: [],
   bootstrap: [AppComponent],
