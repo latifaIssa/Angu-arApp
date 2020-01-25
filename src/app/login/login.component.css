@@ -4,6 +4,12 @@
     justify-content: flex-start;
     text-align: center;
 }
+.form-group{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+}
 
 input {
     padding: 10px;
@@ -12,4 +18,14 @@ input {
 
 label {
     justify-content: center;
+}
+.invalid{
+    border-color: red;
+}
+.d-none{
+    visibility: hidden;
+   
+}
+.if-invalid{
+    color: red;
 }
