@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { WthService } from '../services/wth.service';
 import { Router } from '@angular/router';
 // import { FilterpipePipe } from '../pipes/filterpipe.pipe';
@@ -14,6 +14,9 @@ export class SearchOnCityComponent implements OnInit {
   forecast;
   cityInfo = [];
   constructor(private _router:Router,private weatherService:WthService) { }
+  @HostListener('scroll', ['$event'])  onScroll(event){
+    console.log("successful scroll event");
+  }
 
   ngOnInit() {
     this.weatherService.getPosition().then(pos=>{
@@ -28,7 +31,7 @@ export class SearchOnCityComponent implements OnInit {
   });
   }
   backToHome(): void{
-    this._router.navigate(['/']);
+    this._router.navigate(['/today']);
   }
 
 }

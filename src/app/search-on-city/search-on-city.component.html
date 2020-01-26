@@ -1,28 +1,32 @@
-<div class="container text-center">
-    <h1>{{title}}</h1>
-</div>
 <div class="container">
+    <div class="text-center">
+        <h1>Search for a city</h1>
+    </div>
     <div class="row">
         <div class="search-hero">
-            <input class="form-control" type="text" name="search" [(ngModel)]="searchText" placeholder="&#61442;  Start searching for a city by name ">
+            <input class="form-control" type="text" name="search" [(ngModel)]="searchText" placeholder="Start searching for a city by name ">
         </div>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>city Name</th>
-                    <th>Country</th>
-                </tr>
-            </thead>
-            <!-- *ngFor="let city of four | filterpipe:searchText" -->
-            <tbody>
-                <tr *ngFor="let wth of cityInfo[0] | filterpipe:searchText ">
-                    <td>{{wth.id}}</td>
-                    <td>{{wth.name }}</td>
-                    <td>{{wth.sys.country}}</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="cityList" (scroll)="onScroll($event)">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <!-- <th>Id</th> -->
+                        <th>city Name</th>
+                        <!--  <th>Country</th> -->
+                    </tr>
+                </thead>
+                <!-- *ngFor="let city of four | filterpipe:searchText" -->
+                <tbody>
+                    <tr *ngFor="let wth of cityInfo[0] | filterpipe:searchText ">
+                        <!-- <td>{{wth.id}}</td> -->
+                        <td>{{wth.name }}</td>
+                        <!-- <td>{{wth.sys.country}}</td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div>
         <button (click)="backToHome()">back to home page </button>
     </div>
 </div>

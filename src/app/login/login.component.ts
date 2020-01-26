@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,  FormBuilder,  Validators, FormControlName } from '@angular/forms';
 import { User } from '../user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
 
    userModel = new User('latifa@pseu.edu','Latifa@Masri');
   
-  constructor() {
+  constructor(private route:Router) {
  
    }
    
@@ -19,6 +20,8 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     
   }
- 
+  back(){
+    this.route.navigate(['/today']);
+  }
 
 }

@@ -1,27 +1,38 @@
 .container {
-    padding-top: 50px;
-    padding-bottom: 10px;
     color: black;
 }
 
 .search-hero {
     max-width: 500px;
-    padding-bottom: 50px;
-    margin: auto;
 }
 
 .form-control {
-    box-shadow: 0 10px 40px 0 #B0C1D9;
+    width: 200px;
+    height: 15px;
 }
 
 .form-control::placeholder {
     font-family: FontAwesome;
 }
-table{
+
+table {
     border-collapse: collapse;
+    overflow: auto;
+    /* height: 300px; */
 }
-td, th {
-    border: 1px solid yellow;
+
+td,
+th {
+    /* border: 1px solid yellow; */
     text-align: left;
     padding: 8px;
-  }
+}
+
+.cityList {
+    overflow: auto;
+    height: 400px;
+}
+
+S button {
+    margin-top: 100px;
+}
