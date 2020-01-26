@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     
   }
-  back(){
+  Login(){
     this.route.navigate(['/today']);
   }
 

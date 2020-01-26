@@ -1,26 +1,38 @@
 <h1>Login</h1>
+<!-- (ngSubmit)="onSubmit()" novalidate -->
 <form class="form-container" #userLogin="ngForm">
     <div class="form-group">
         <label for="email">Email</label><br>
-        <input type="text" placeholder="Email" #email="ngModel" required [class.invalid]="email.invalid && email.touched" name="email" [(ngModel)]="userModel.email">
-        <!-- <small class="if-invalid" [class.d-none]="email.valid || email.untouched">Email is required</small> -->
+        <input type="text" placeholder="Email" #email="ngModel" pattern="^[a-zA-Z0-9._%+-]+@pseu.edu$" 
+        required maxlength="180" [class.invalid]="email.invalid && email.touched" 
+        name="email" [(ngModel)]="userModel.email">
         <div *ngIf="email.errors && (email.invalid || email.touched)">
             <small class="if-invalid" *ngIf="email.errors.required">email is required</small>
-            <!-- <small class="if-invalid" *ngIf="email.errors.pattern">password must be more than 6 digit and l2</small> -->
+            <small class="if-invalid" *ngIf="email.errors.maxlength">email contain maximum 180 digit</small>
+            <small class="if-invalid" *ngIf="email.errors.pattern">
+                the email pattern is invalid, the pattern like (anything@pseu.edu) 
+             </small>
         </div>
     </div>
     <div class="form-group">
         <label for="password">Password</label><br>
-        <input type="password" placeholder="password" name="password" pattern="^\d{6}$" #password="ngModel" required [class.invalid]="password.invalid && password.touched" [(ngModel)]="userModel.password">
+        <input type="password" placeholder="password" name="password" #password="ngModel" 
+        pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).{6,12}$" minlength="6" maxlength="12"
+         #password="ngModel" required [class.invalid]="password.invalid && password.touched"
+          [(ngModel)]="userModel.password">
         <!-- <small class="if-invalid" [class.d-none]="password.valid || password.untouched">password is required</small> -->
-        <div *ngIf="password.errors && (password.invalid || password.touched)">
+        <div *ngIf="password.errors && ( password.invalid || password.touched)">
             <small class="if-invalid" *ngIf="password.errors.required">password is required</small>
-            <small class="if-invalid" *ngIf="password.errors.pattern">password must be more than 6 digit and l2</small>
+            <small class="if-invalid" *ngIf="password.errors.pattern"> Only characters are allowed</small>
+            <small class="if-invalid" *ngIf="password.errors.minlength">password contain at least 6 didgit</small>
+            <small class="if-invalid" *ngIf="password.errors.maxlength">password contain maximum 12 digit</small>
         </div>
     </div>
 
     <div>
-        <button type="submit" placeholder="Login" value="Login" class="login" (click)="back()">Login</button>
+        <button type="submit"  class="login" (click)="Login()" 
+       >Login</button>
+       <!-- [disabled]="!userLogin.valid" -->
     </div>
 
 </form>
