@@ -1,6 +1,7 @@
 import { AppRoutingModule } from "./routing/AppRoutingModule";
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, FormBuilder, FormControlName} from '@angular/forms';
  
@@ -31,7 +32,8 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FormsModule   
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

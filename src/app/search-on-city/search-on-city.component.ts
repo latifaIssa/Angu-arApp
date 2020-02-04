@@ -1,6 +1,13 @@
 import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { WthService } from '../services/wth.service';
 import { Router } from '@angular/router';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
 // import { FilterpipePipe } from '../pipes/filterpipe.pipe';
 
 @Component({
@@ -8,6 +15,15 @@ import { Router } from '@angular/router';
   templateUrl: './search-on-city.component.html',
   styleUrls: ['./search-on-city.component.css'] ,
   // pipes: [FilterpipePipe],
+  animations: [
+    trigger('shrinkOut', [
+      state('in', style({ height: '*' })),
+      transition('* => void', [
+        style({ height: '*' }),
+        animate(250, style({ height: 0 }))
+      ])
+    ])
+  ]
 })
 export class SearchOnCityComponent implements OnInit {
   @Input()  searchText;
