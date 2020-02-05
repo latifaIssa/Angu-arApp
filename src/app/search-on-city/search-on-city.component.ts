@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostListener } from '@angular/core';
+import { Component, OnInit, Input, HostListener, HostBinding } from '@angular/core';
 import { WthService } from '../services/wth.service';
 import { Router } from '@angular/router';
 import {
@@ -26,6 +26,13 @@ import {
   ]
 })
 export class SearchOnCityComponent implements OnInit {
+  isOpen = true;
+
+  toggle() {
+    this.isOpen = !this.isOpen;
+  }
+  onAnimationEvent ( event: AnimationEvent ) {
+  }
   @Input()  searchText;
   forecast;
   cityInfo = [];
