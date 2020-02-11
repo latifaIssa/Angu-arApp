@@ -10,19 +10,19 @@
 
             <tr>
                 <td>temp_min</td>
-                <td>{{fourDayWeatherInfo[wth]?.temp_min+"°C"}}</td>
+                <td>{{fourDayWeatherInfo[wth]?.temp_min - 277.15| number:'2.1-3' }}°C</td>
             </tr>
             <tr>
                 <td>temp_max</td>
-                <td>{{fourDayWeatherInfo[wth]?.temp_max+"°C"}}</td>
+                <td>{{fourDayWeatherInfo[wth]?.temp_max - 277.15| number:'2.1-3' }}°C</td>
             </tr>
             <tr>
                 <td>temp</td>
-                <td>{{fourDayWeatherInfo[wth]?.feels_like+"°C"}}</td>
+                <td>{{(fourDayWeatherInfo[wth]?.feels_like - 277.15)| number:'2.1-3' }}°C</td>
             </tr>
             <tr>
                 <td>pressure</td>
-                <td>{{fourDayWeatherInfo[wth]?.pressure}}</td>
+                <td>{{fourDayWeatherInfo[wth]?.pressure }}</td>
             </tr>
             <tr>
                 <td>sea_level</td>

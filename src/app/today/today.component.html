@@ -14,8 +14,8 @@
             </tr>
             <tr *ngFor="let wth of fourDayWeatherInfo">
                 <td>{{wth.date | date:'EEEE, MMM dd'}}</td>
-                <td>{{wth.temp+" °C"}}</td>
-                <!-- <td>{{wth.temp_max+" °C"}}</td> -->
+                <td>{{(wth.temp  - 277.15| number:'2.1-3'}}°C</td>
+                <!-- <td>{{wth.temp_max - 273.15 +" °C"}}</td> -->
 
                 <td><a [routerLink]="['/detailes-weather', wth.id]">weather detailes</a></td>
             </tr>
