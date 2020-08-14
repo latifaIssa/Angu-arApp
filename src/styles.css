@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+body,
+html {
+    height: 100%;
+}
+
+body {
+    /* background: linear-gradient(45deg, transparent 50%, transparent 90%, blue 1000%), linear-gradient(-45deg, blue 8%, rgb(243, 223, 45) 100%, blue 10%, transparent 50%), linear-gradient(45deg, rgb(250, 247, 93) 50%, rgb(243, 223, 45) 10%, transparent 59%); */
+    background: linear-gradient(to bottom, #59498c 30%, #8c5d9e 100%);
+    background-repeat: no-repeat;
+}
